@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRecoilState } from 'recoil'
-import {
-  HomeIcon,
-  SearchIcon,
-  LibraryIcon,
-  PlusCircleIcon,
-  HeartIcon,
-  RssIcon,
-} from '@heroicons/react/solid'
 
 import useSpotify from '../hooks/useSpotify'
 import { playlistIdState } from '../atoms/playlistAtom'
@@ -28,39 +20,11 @@ export const Sidebar: React.FC = () => {
   }, [data, spotifyApi])
 
   return (
-    <div className="hidden h-screen overflow-y-scroll border-r border-gray-900 p-5 text-xs text-gray-500 scrollbar-hide sm:min-w-[12rem] sm:max-w-[12rem] md:inline-flex lg:min-w-[15rem] lg:max-w-[15rem] lg:text-sm">
+    <div className="hidden h-screen overflow-y-scroll border-r border-gray-900 p-5 pb-36 text-xs text-gray-500 scrollbar-hide sm:min-w-[12rem] sm:max-w-[12rem] md:inline-flex lg:min-w-[15rem] lg:max-w-[15rem] lg:text-sm">
       <div className="w-full space-y-4">
-        <button className="flex items-center space-x-2 hover:text-white">
-          <HomeIcon className="h-5 w-5" />
-          <p>Home</p>
-        </button>
-
-        <button className="flex items-center space-x-2 hover:text-white">
-          <SearchIcon className="h-5 w-5" />
-          <p>Search</p>
-        </button>
-
-        <button className="flex items-center space-x-2 hover:text-white">
-          <LibraryIcon className="h-5 w-5" />
-          <p>Your Library</p>
-        </button>
-
-        <hr className="border-t-[0.1px] border-gray-900" />
-
-        <button className="flex items-center space-x-2 hover:text-white">
-          <PlusCircleIcon className="h-5 w-5" />
-          <p>Create Playlist</p>
-        </button>
-
-        <button className="flex items-center space-x-2 hover:text-white">
-          <HeartIcon className="h-5 w-5" />
-          <p>Liked Songs</p>
-        </button>
-
-        <button className="flex items-center space-x-2 hover:text-white">
-          <RssIcon className="h-5 w-5" />
-          <p>Your Episodes</p>
-        </button>
+        <div className="flex items-center space-x-2 text-lg text-white">
+          <h1>Your Playlists</h1>
+        </div>
 
         <hr className="border-t-[0.1px] border-gray-900" />
 

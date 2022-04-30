@@ -1,7 +1,8 @@
 import { useRecoilState } from 'recoil'
-import { millisToMinutes } from '../lib/time'
+
 import useSpotify from '../hooks/useSpotify'
 import { currentTrackIdState, isPlayingState } from '../atoms/songAtom'
+import { millisToMinutes } from '../lib/time'
 
 interface SongProps {
   track: any
@@ -9,9 +10,8 @@ interface SongProps {
 }
 
 export const Song: React.FC<SongProps> = ({ track, order }) => {
-  const [currentTrackId, setCurrentTrackId] =
-    useRecoilState(currentTrackIdState)
-  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
+  const [__, setCurrentTrackId] = useRecoilState(currentTrackIdState)
+  const [_, setIsPlaying] = useRecoilState(isPlayingState)
   const spotifyApi = useSpotify()
 
   const playSong = () => {

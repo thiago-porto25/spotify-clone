@@ -11,12 +11,12 @@ interface LoginProps {
 
 const Login: NextPage<LoginProps> = ({ providers }) => {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
+    <div className="flex min-h-screen w-full flex-col bg-black">
       <Head>
         <title>Login - Spotify</title>
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Login to Spotify clone" />
       </Head>
-      <main className="">
+      <main className=" flex flex-grow flex-col items-center justify-center">
         <Image
           src="/images/spotify-logo.png"
           alt="spotify logo"
@@ -28,13 +28,19 @@ const Login: NextPage<LoginProps> = ({ providers }) => {
           <div className="mt-8 flex justify-center" key={provider.name}>
             <button
               onClick={() => signIn(provider.id, { callbackUrl: '/' })}
-              className="rounded-lg bg-[#18d860] p-4 text-white hover:bg-[#2cdc6f] "
+              className="rounded-lg bg-[#18d860] p-4  hover:bg-[#2cdc6f] "
             >
               Login with {provider.name}
             </button>
           </div>
         ))}
       </main>
+      <footer className="flex items-center justify-center bg-gray-900 p-4 text-white">
+        <p>
+          This app only works if the real spotify app or the web version is
+          currently opened and signed in into an Premium account.
+        </p>
+      </footer>
     </div>
   )
 }

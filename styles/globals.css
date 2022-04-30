@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .button {
+    @apply h-5 w-5 transform cursor-pointer transition duration-100 ease-out hover:scale-125;
+  }
+}
+
 ul {
   list-style-type: none;
   margin: 0;

@@ -1,33 +1,30 @@
 import type { NextPage } from 'next'
-import { getSession } from 'next-auth/react'
-import { AppContext } from 'next/app'
 import Head from 'next/head'
+
 import { Body } from '../components/Body'
+import { Player } from '../components/Player'
 import { Sidebar } from '../components/Sidebar'
 
 const Home: NextPage = () => {
   return (
     <div className="h-screen overflow-hidden bg-black">
       <Head>
-        <title>Spotify</title>
+        <title>Spotify Player Manager</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="This is a spotify player clone made for educational purposes"
+        />
       </Head>
       <main className="flex">
         <Sidebar />
         <Body />
       </main>
+      <div className="sticky bottom-0">
+        <Player />
+      </div>
     </div>
   )
-}
-
-export async function getServerSideProps(context: any) {
-  const session = await getSession(context)
-
-  return {
-    props: {
-      session,
-    },
-  }
 }
 
 export default Home

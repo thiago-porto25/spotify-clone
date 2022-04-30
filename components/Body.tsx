@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { shuffle } from 'lodash'
+import Image from 'next/image'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import { playlistIdState, playlistState } from '../atoms/playlistAtom'
@@ -39,7 +39,7 @@ export const Body: React.FC = () => {
       .catch((err) => {
         console.error('Something went wrong', err)
       })
-  }, [playlistId, spotifyApi])
+  }, [playlistId, spotifyApi, data])
 
   return (
     <div className="relative h-screen flex-grow overflow-y-scroll scrollbar-hide">
@@ -68,7 +68,7 @@ export const Body: React.FC = () => {
           src={playlist?.images?.[0]?.url}
           alt={playlist?.name || 'Playlist'}
         />
-        <div className="">
+        <div>
           <p>PLAYLIST</p>
           <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">
             {playlist?.name}

@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil'
-import { playlistState } from '../atoms/playlistAtom'
+
 import { Song } from './Song'
+import { playlistState } from '../atoms/playlistAtom'
 
 export const Songs: React.FC = () => {
   const playlist = useRecoilValue<any>(playlistState)
