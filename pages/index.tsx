@@ -10,11 +10,6 @@ const Home: NextPage = () => {
     <div className="h-screen overflow-hidden bg-black">
       <Head>
         <title>Spotify Player Manager</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="This is a spotify player clone made for educational purposes"
-        />
       </Head>
       <main className="flex">
         <Sidebar />

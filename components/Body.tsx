@@ -50,7 +50,7 @@ export const Body: React.FC = () => {
         >
           <Image
             className="h-10 w-10 rounded-full"
-            src={data?.user?.image || '/images/default-user.png'}
+            src={data?.user?.image || 'images/default-user.png'}
             alt="User avatar"
             height={40}
             width={40}

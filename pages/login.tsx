@@ -16,9 +16,9 @@ const Login: NextPage<LoginProps> = ({ providers }) => {
         <title>Login - Spotify</title>
         <meta name="description" content="Login to Spotify clone" />
       </Head>
-      <main className=" flex flex-grow flex-col items-center justify-center">
+      <main className="flex flex-grow flex-col items-center justify-center">
         <Image
-          src="/images/spotify-logo.png"
+          src="images/spotify-logo.png"
           alt="spotify logo"
           height={200}
           width={200}
