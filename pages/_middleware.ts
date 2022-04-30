@@ -10,7 +10,12 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  if (req.nextUrl.pathname.includes('/api/auth') || token) {
+  if (
+    req.nextUrl.pathname.includes('/api/auth') ||
+    token ||
+    req.nextUrl.pathname.includes('/_next') ||
+    req.nextUrl.pathname.includes('/favicon.ico')
+  ) {
     return NextResponse.next()
   }
 
