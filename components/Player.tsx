@@ -19,15 +19,22 @@ export const Player: React.FC = () => {
   const songInfo = useSongInfo()
 
   const handlePlayPause = () => {
-    spotifyApi.getMyCurrentPlaybackState().then((res) => {
-      if (res.body.is_playing) {
-        spotifyApi.pause()
-        setIsPlaying(false)
-      } else {
-        spotifyApi.play()
-        setIsPlaying(true)
-      }
-    })
+    spotifyApi
+      .getMyCurrentPlaybackState()
+      .then((res) => {
+        if (res.body.is_playing) {
+          spotifyApi.pause()
+          setIsPlaying(false)
+        } else {
+          spotifyApi.play()
+          setIsPlaying(true)
+        }
+      })
+      .catch(() =>
+        alert(
+          'Make sure you are logged in into a Spotify web/mobile/desktop app with a Premium account'
+        )
+      )
   }
 
   const fetchCurrentSong = () => {

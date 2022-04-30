@@ -9,6 +9,8 @@ import { playlistIdState, playlistState } from '../atoms/playlistAtom'
 import useSpotify from '../hooks/useSpotify'
 import { Songs } from './Songs'
 
+import defaultUserImage from '../public/default-user.png'
+
 const colors = [
   'from-indigo-500',
   'from-blue-500',
@@ -50,7 +52,7 @@ export const Body: React.FC = () => {
         >
           <Image
             className="h-10 w-10 rounded-full"
-            src={data?.user?.image || 'images/default-user.png'}
+            src={data?.user?.image || '/default-user.png'}
             alt="User avatar"
             height={40}
             width={40}
@@ -65,7 +67,7 @@ export const Body: React.FC = () => {
         <img
           loading="lazy"
           className="h-44 w-44 shadow-2xl"
-          src={playlist?.images?.[0]?.url}
+          src={playlist?.images?.[0]?.url || defaultUserImage}
           alt={playlist?.name || 'Playlist'}
         />
         <div>

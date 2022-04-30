@@ -17,9 +17,15 @@ export const Song: React.FC<SongProps> = ({ track, order }) => {
   const playSong = () => {
     setCurrentTrackId(track.track.id)
     setIsPlaying(true)
-    spotifyApi.play({
-      uris: [track.track.uri],
-    })
+    spotifyApi
+      .play({
+        uris: [track.track.uri],
+      })
+      .catch(() =>
+        alert(
+          'Make sure you are logged in into a Spotify web/mobile/desktop app with a Premium account'
+        )
+      )
   }
 
   return (

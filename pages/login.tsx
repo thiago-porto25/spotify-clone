@@ -5,6 +5,8 @@ import Head from 'next/head'
 import { getProviders, signIn } from 'next-auth/react'
 import type { ClientSafeProvider } from 'next-auth/react'
 
+import spotifyLogo from '../public/spotify-logo.png'
+
 interface LoginProps {
   providers: ClientSafeProvider[]
 }
@@ -17,12 +19,7 @@ const Login: NextPage<LoginProps> = ({ providers }) => {
         <meta name="description" content="Login to Spotify clone" />
       </Head>
       <main className="flex flex-grow flex-col items-center justify-center">
-        <Image
-          src="images/spotify-logo.png"
-          alt="spotify logo"
-          height={200}
-          width={200}
-        />
+        <Image src={spotifyLogo} alt="spotify logo" height={200} width={200} />
 
         {Object.values(providers).map((provider) => (
           <div className="mt-8 flex justify-center" key={provider.name}>
